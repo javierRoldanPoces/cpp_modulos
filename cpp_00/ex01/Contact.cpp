@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: javi <javi@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: javier <javier@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 18:49:33 by javier            #+#    #+#             */
-/*   Updated: 2023/12/05 12:29:43 by javi             ###   ########.fr       */
+/*   Updated: 2024/04/02 20:17:32 by javier           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,17 +65,27 @@ int Contact::add_contact()
 
 void	Contact::display_contact()
 {
-    std::cout << "Fist name: " << this->first_name << std::endl;
-    std::cout << "Last name: " << this->last_name << std::endl;
-    std::cout << "Nickname: " << this->nick_name << std::endl;
-    std::cout << "Phone Number: " << this->phone_number << std::endl;
-    std::cout << "Darkest secret: " << this->darkest_secret << std::endl;
+    std::cout << RED << "Fist name: " << RESET << this->first_name << std::endl;
+    std::cout << RED << "Last name: " << RESET << this->last_name << std::endl;
+    std::cout << RED << "Nickname: " << RESET <<  this->nick_name << std::endl;
+    std::cout << RED << "Phone Number: " << RESET << this->phone_number << std::endl;
+    std::cout << RED << "Darkest secret: " << RESET << this->darkest_secret << std::endl;
 }
-// Faltaria controlar si el size de la cadena es > 10 sustituir posicion [0] por un . y mostrar solo hasta esa posicion
+
 void	Contact::display_table()
 {
-    std::cout << "|" << "         " << this->index;
-    std::cout << "|" << std::right << this->first_name;
-    std::cout << "|" << std::right << this->last_name;
-    std::cout << "|" << std::right << this->nick_name << std::endl;
+	std::cout << "|" << std::setw(10) << this->index + 1;
+	if (this->first_name.length() > 10)
+		std::cout << "|" << this->first_name.substr(0, 9) << ".";
+	else
+		std::cout << "|" << std::setw(10) << this->first_name;
+	if (this->last_name.length() > 10)
+		std::cout << "|" << this->last_name.substr(0, 9) << ".";
+	else
+		std::cout << "|" << std::setw(10) << this->last_name;
+	if (this->nick_name.length() > 10)
+		std::cout << "|" << this->nick_name.substr(0, 9) << ".";
+	else
+		std::cout << "|" << std::setw(10) << this->nick_name;
+	std::cout << std::endl;		
 }

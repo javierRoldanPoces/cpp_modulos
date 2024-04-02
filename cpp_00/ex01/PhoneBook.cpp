@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: javi <javi@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: javier <javier@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 18:49:38 by javier            #+#    #+#             */
-/*   Updated: 2024/04/01 21:16:06 by javi             ###   ########.fr       */
+/*   Updated: 2024/04/02 20:19:47 by javier           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ PhoneBook::~PhoneBook()
 
 void PhoneBook::add_contact()
 {
-	if (index_last < 4)
+	if (index_last < 8)
 	{
 		this->contact[this->index_last].add_contact();
 		this->contact[this->index_last].index = this->index_last;
@@ -51,7 +51,7 @@ void	PhoneBook::display_phonebook_contact()
 		index_search = atoi(str.c_str());
 		if (this->flag == true)
 		{
-			if (index_search <= 4 && index_search > 0)
+			if (index_search <= 8 && index_search > 0)
 				this->contact[index_search - 1].display_contact();
 			else
 				std::cout << "Contact not available" <<std:: endl;
@@ -71,10 +71,14 @@ void	PhoneBook::display_phonebook_contact()
 
 void	PhoneBook::display_all_phonebook()
 {
-	std::cout << "|" << "    id    " << "|" << "first name" << " last name	" << "|" << " nick name" << std::endl;
+	std::cout << RED << "|" << std::setw(10) << "Index";
+	std::cout << "|" << std::setw(10) << "First Name";
+	std::cout << "|" << std::setw(10) << "Last Name";
+	std::cout << "|" << std::setw(10) << "Nickname";
+	std::cout << "|" << std::endl << RESET;
 	if (this->flag == true)
 	{
-		for (unsigned int i = 0; i < 4; i++)
+		for (unsigned int i = 0; i < 8; i++)
 			this->contact[i].display_table();	
 	}
 	else

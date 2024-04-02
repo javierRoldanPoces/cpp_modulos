@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: javi <javi@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: javier <javier@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 18:49:29 by javier            #+#    #+#             */
-/*   Updated: 2023/12/05 12:37:57 by javi             ###   ########.fr       */
+/*   Updated: 2024/04/02 20:14:45 by javier           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_HPP
-#define CONTACT_HPP
-
+# define CONTACT_HPP
+# define RED "\x1B[31m"
+# define RESET "\x1b[0m"
 #include <cstring>
 #include <iostream>
 #include <iomanip>
