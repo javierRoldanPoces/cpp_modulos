@@ -3,17 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   randomChump.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: javier <javier@student.42.fr>              +#+  +:+       +#+        */
+/*   By: javi <javi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 23:00:18 by javier            #+#    #+#             */
-/*   Updated: 2024/04/02 23:39:19 by javier           ###   ########.fr       */
+/*   Updated: 2024/04/03 19:29:26 by javi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-void    randomChump(std::string name)
+void    randomChump(std::string strname)
 {
-    (void)name; 
+    Zombie	rand_chump_zombie(strname);
+	rand_chump_zombie.announce();
 }
     

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: javier <javier@student.42.fr>              +#+  +:+       +#+        */
+/*   By: javi <javi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 23:00:30 by javier            #+#    #+#             */
-/*   Updated: 2024/04/02 23:40:39 by javier           ###   ########.fr       */
+/*   Updated: 2024/04/03 19:23:13 by javi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ Zombie::Zombie()
     
 }
 
-Zombie::Zombie(std::string sname)
+Zombie::Zombie(std::string strname)
 {
-    this->name = sname;
+    this->name = strname;
 }
 Zombie::~Zombie()
 {
