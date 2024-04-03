@@ -6,7 +6,7 @@ SRC =	main.cpp \
 
 OBJT = $(SRC:.cpp=.o)
 
-CC = g++
+CC = c++
 
 CFLAGS = -Wall -Wextra -Werror
 
