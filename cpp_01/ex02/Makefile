@@ -5,18 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: javi <javi@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/04/04 18:12:14 by javi              #+#    #+#              #
-#    Updated: 2024/04/04 18:12:15 by javi             ###   ########.fr        #
+#    Created: 2024/04/04 18:12:01 by javi              #+#    #+#              #
+#    Updated: 2024/04/04 18:12:05 by javi             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-
-NAME =	Zombie
+NAME =	Brain
 
 SRC =	main.cpp \
-		Zombie.cpp \
-		newZombie.cpp \
-		randomChump.cpp \
 
 OBJT = $(SRC:.cpp=.o)
 
