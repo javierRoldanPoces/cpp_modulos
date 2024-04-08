@@ -6,7 +6,7 @@
 /*   By: javi <javi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 19:06:49 by javi              #+#    #+#             */
-/*   Updated: 2024/04/04 19:18:47 by javi             ###   ########.fr       */
+/*   Updated: 2024/04/08 18:49:27 by javi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Weapon::Weapon(std::string type_weapon)
 }
 Weapon::~Weapon()
 {
-    std::cout << "weapon" << this->type << "has been destroyed" << std::endl;
+    std::cout << "Weapon " << this->type << " has been destroyed" << std::endl;
 }
 
 const	std::string&  Weapon::getType()

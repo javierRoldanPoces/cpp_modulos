@@ -6,14 +6,17 @@
 #    By: javi <javi@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/04 18:43:58 by javi              #+#    #+#              #
-#    Updated: 2024/04/04 18:43:59 by javi             ###   ########.fr        #
+#    Updated: 2024/04/08 18:47:59 by javi             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 NAME =	Weapon
 
-SRC =	main.cpp \
+SRC =	main.cpp	\
+		Weapon.cpp	\
+		HumanA.cpp	\
+		HumanB.cpp	\
 
 OBJT = $(SRC:.cpp=.o)
 

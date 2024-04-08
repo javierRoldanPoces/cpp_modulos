@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.cpp                                         :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: javi <javi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/04 19:24:33 by javi              #+#    #+#             */
-/*   Updated: 2024/04/08 18:52:27 by javi             ###   ########.fr       */
+/*   Created: 2024/04/08 18:23:17 by javi              #+#    #+#             */
+/*   Updated: 2024/04/08 18:36:27 by javi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
+#include <iostream>
+#include "Weapon.hpp"
 
-HumanA::HumanA(std::string name_A, Weapon& type_weapon)
-    : name_a(name_A), weapon_type(type_weapon)
-{
-}
+#ifndef HUMANB_H
+# define HUMANB_H
 
-HumanA::~HumanA()
+class HumanB
 {
-    std::cout << "HumanA " << this->name_a << " has been destroyed" << std::endl;
-}
+private:
+    std::string name_b;
+    Weapon      *weapon_type;
+    
+public:
+    HumanB(std::string name_B);
+    ~HumanB();
+    void   setWeapon(Weapon &weapon_type);
+    void    attack();
+};
 
-void    HumanA::attack()
-{
-    std::cout << this->name_a << " attacks with their " << this->weapon_type.getType() << std::endl;
-}
+#endif
