@@ -5,14 +5,15 @@
 #                                                     +:+ +:+         +:+      #
 #    By: javier <javier@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/04/08 19:32:38 by javi              #+#    #+#              #
-#    Updated: 2024/04/11 10:59:34 by javier           ###   ########.fr        #
+#    Created: 2024/04/11 11:00:00 by javier            #+#    #+#              #
+#    Updated: 2024/04/11 11:28:18 by javier           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =	Sed
+NAME =	Harl
 
 SRC =	main.cpp	\
+		Harl.cpp	\
 
 OBJT = $(SRC:.cpp=.o)
 
