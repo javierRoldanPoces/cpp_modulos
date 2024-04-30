@@ -6,7 +6,7 @@
 /*   By: javier <javier@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 23:52:35 by javier            #+#    #+#             */
-/*   Updated: 2024/04/22 01:43:50 by javier           ###   ########.fr       */
+/*   Updated: 2024/04/30 17:07:11 by javier           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 // Constructor por defecto.
 Fixed::Fixed()
 {
-    std::cout << "Default constructor called" << std::endl;
+   // std::cout << "Default constructor called" << std::endl;
     this->_fixed_point = 0;
 }
 
@@ -31,14 +31,14 @@ initialized to 8 like in exercise 00
 */
 Fixed::Fixed(const int integ)
 {
-	std::cout << "Int constructor called" << std::endl;
+	//std::cout << "Int constructor called" << std::endl;
 	_fixed_point = integ << _fractional_bits; // Equivale a multipilicar integ * 2⁸.Pilla un int y lo convierte a punto flotante.
 }
 
 //Sobrecarga constructor recibe float.
 Fixed::Fixed(const float floating_point)
 {
-	std::cout << "Float constructor called" << std::endl;
+	//std::cout << "Float constructor called" << std::endl;
 	_fixed_point = roundf(floating_point * (1 << _fractional_bits));//Pilla un float y lo convierte a punto flotante.
 }
 
@@ -46,14 +46,14 @@ Fixed::Fixed(const float floating_point)
 // Constructor de copia.
 Fixed::Fixed(const Fixed& name)
 {
-    std::cout << "Copy constructor called" << std::endl;
+    //std::cout << "Copy constructor called" << std::endl;
     *this = name;
 }
 
 // Sobrecarga operador de asignación.
 const Fixed&	Fixed::operator =(const Fixed& name)
 {
-    std::cout << "Copy assignment operator called" << std::endl;
+    //std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &name) // Para evitar que se haga una reasignacion.
 		_fixed_point = name._fixed_point; //name.getRawBits();  // (Modificación para output = que en subject)
 	return (*this);
@@ -62,20 +62,20 @@ const Fixed&	Fixed::operator =(const Fixed& name)
 // Destructor
 Fixed::~Fixed()
 {
-	std::cout << "Destructor called" << std::endl;
+	//std::cout << "Destructor called" << std::endl;
 }
 
 // Función miembro que devuelve el valor de _fixed_point.
 int Fixed::getRawBits(void) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
+	//std::cout << "getRawBits member function called" << std::endl;
 	return (this->_fixed_point);
 }
 
 // Funcion miembro para asignar un valor a _fixed_point.
 void Fixed::setRawBits(int const raw)
 {
-	std::cout << "setRawBits member function called" << std::endl;
+	//std::cout << "setRawBits member function called" << std::endl;
 	this->_fixed_point =raw;
 }
 
@@ -202,6 +202,39 @@ Fixed	Fixed::operator--(void)
 	this->_fixed_point--;
 	return (*this);
 }
+
+Fixed&	Fixed::min(Fixed& a, Fixed& b)
+{
+	if (a < b)
+		return a;
+	else
+		return b;
+}
+
+const Fixed&	Fixed::min(const Fixed& a, const Fixed& b)
+{
+	if (a < b)
+		return a;
+	else
+		return b;
+}
+
+Fixed&	Fixed::max(Fixed& a, Fixed& b)
+{
+	if (a > b)
+		return a;
+	else
+		return b;
+}
+
+const Fixed&	Fixed::max(const Fixed& a, const Fixed& b)
+{
+	if (a > b)
+		return a;
+	else
+		return b;
+}
+
 /*********************************************************************/
 std::ostream& operator<<(std::ostream& outstream, const Fixed& name)
 {

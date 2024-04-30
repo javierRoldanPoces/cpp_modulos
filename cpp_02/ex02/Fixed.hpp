@@ -6,7 +6,7 @@
 /*   By: javier <javier@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 23:51:59 by javier            #+#    #+#             */
-/*   Updated: 2024/04/22 01:37:52 by javier           ###   ########.fr       */
+/*   Updated: 2024/04/30 15:33:41 by javier           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,21 @@ class Fixed
 		float toFloat( void ) const;
 		//Funcion miembro que convierte el _fixed_point  a un int 
 		int toInt( void ) const;
+		static Fixed&	min(Fixed& a, Fixed& b);
+		static const Fixed&	min(const Fixed& a, const Fixed& b);
+		static Fixed&	max(Fixed& a, Fixed& b);
+		static const Fixed&	max(const Fixed& a, const Fixed& b);
 };
 	/*
+	Add these four public overloaded member functions to your class:
+• A static member function min that takes as parameters two references on fixed-point
+numbers, and returns a reference to the smallest one.
+• A static member function min that takes as parameters two references to constant
+fixed-point numbers, and returns a reference to the smallest one.
+• A static member function max that takes as parameters two references on fixed-point
+numbers, and returns a reference to the greatest one.
+• A static member function max that takes as parameters two references to constant
+fixed-point numbers, and returns a reference to the greatest one
 		
 		And add the following function to the Fixed class files:
 			• An overload of the insertion («) operator that inserts a floating-point representation

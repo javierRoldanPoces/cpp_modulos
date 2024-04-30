@@ -6,7 +6,7 @@
 /*   By: javier <javier@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 23:49:06 by javier            #+#    #+#             */
-/*   Updated: 2024/04/22 01:32:50 by javier           ###   ########.fr       */
+/*   Updated: 2024/04/30 17:03:35 by javier           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,6 @@ int	main( void )
 	
 	std::cout << b << std::endl;
 	
-	//std::cout << Fixed::max( a, b ) << std::endl;
+	std::cout << Fixed::max( a, b ) << std::endl;
 	return 0;
 }
