@@ -6,7 +6,7 @@
 /*   By: javier <javier@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 23:52:35 by javier            #+#    #+#             */
-/*   Updated: 2024/04/30 17:07:11 by javier           ###   ########.fr       */
+/*   Updated: 2024/04/30 21:36:41 by javier           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,6 @@ Fixed::Fixed(const float floating_point)
 	//std::cout << "Float constructor called" << std::endl;
 	_fixed_point = roundf(floating_point * (1 << _fractional_bits));//Pilla un float y lo convierte a punto flotante.
 }
-
-
 // Constructor de copia.
 Fixed::Fixed(const Fixed& name)
 {
