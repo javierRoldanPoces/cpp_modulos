@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: javier <javier@student.42.fr>              +#+  +:+       +#+        */
+/*   By: javi <javi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 18:43:58 by javier            #+#    #+#             */
-/*   Updated: 2024/04/30 21:18:09 by javier           ###   ########.fr       */
+/*   Updated: 2024/05/01 13:35:27 by javi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,8 +76,44 @@ unsigned int	ClapTrap::get_attack_damage(void) const
 	return this->_attack_damage;
 }
 
+
 void	ClapTrap::attack(const std::string& target)
 {
-	if (_energy_points == 0)
-		std::cout << this->_name << "can not attack" << std::endl;
+	if (_energy_points > 0 && _hit_points > 0)
+	{
+		_energy_points--;
+		std::cout << "ClapTrap " <<  _name  << " attacks " << target << ". causing "
+		<< _attack_damage << " points of damage" << std::endl;
+	}
+	else
+		std::cout << "Claptrap " <<  _name <<" can't attack, he has not energy points." 
+        << std::endl;
+}
+
+void	ClapTrap::takeDamage(unsigned int amount)
+{
+	if (_hit_points > 0)
+	{
+		if (_hit_points > amount)
+			_hit_points-=amount;
+		else
+			_hit_points = 0;
+		std::cout << "ClapTrap " << _name << " has taken " << amount << " of damage "
+		<<  _name  << " has " <<  _hit_points << " hit_points" << std::endl;
+	}
+	else
+		std::cout << "ClapTrap" << _name << " is dead." <<std::endl;
+}
+
+void	ClapTrap::beRepaired(unsigned int amount)
+{
+	if (_energy_points > 0 && _hit_points > 0)
+	{
+		_energy_points--;
+		_hit_points+=amount;
+		std::cout << "ClapTrap " << _name << " has been repaired. He has "
+		<< _hit_points << " hit_points" << std::endl;
+	}
+	else
+		std::cout << "ClapTrap " << _name << " is dead." << std::endl;
 }
