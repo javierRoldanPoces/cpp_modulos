@@ -6,12 +6,10 @@
 /*   By: javi <javi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 13:15:37 by javi              #+#    #+#             */
-/*   Updated: 2024/05/01 19:40:26 by javi             ###   ########.fr       */
+/*   Updated: 2024/05/01 19:59:02 by javi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 
 int main (void) {
@@ -22,7 +20,7 @@ int main (void) {
     Scav1.guardGate();
     for (int i = 1;i <= 50;i++)
     {
-        Scav1.attack("Niebla");
+        Scav1.attack(Scav2.get_name());
         std::cout << i << std::endl;
     }
     Scav1.beRepaired(10);

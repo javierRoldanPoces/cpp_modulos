@@ -6,7 +6,7 @@
 /*   By: javi <javi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 14:07:43 by javi              #+#    #+#             */
-/*   Updated: 2024/05/01 19:44:42 by javi             ###   ########.fr       */
+/*   Updated: 2024/05/01 20:09:41 by javi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 class FragTrap: public ClapTrap
 {
-    private:
+	private:
 
 	public:
 		FragTrap();

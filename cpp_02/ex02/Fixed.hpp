@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: javier <javier@student.42.fr>              +#+  +:+       +#+        */
+/*   By: javi <javi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 23:51:59 by javier            #+#    #+#             */
-/*   Updated: 2024/04/30 15:33:41 by javier           ###   ########.fr       */
+/*   Updated: 2024/05/01 20:20:59 by javi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream> // Add the missing include path for the iostream library
-
+#include <iostream>
 #ifndef FIXED_HPP
 #define FIXED_HPP
 

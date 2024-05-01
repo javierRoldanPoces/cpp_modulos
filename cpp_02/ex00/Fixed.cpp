@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: javier <javier@student.42.fr>              +#+  +:+       +#+        */
+/*   By: javi <javi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 15:56:20 by javier            #+#    #+#             */
-/*   Updated: 2024/04/20 18:07:00 by javier           ###   ########.fr       */
+/*   Updated: 2024/05/01 20:14:14 by javi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,24 @@
 // Constructor por defecto.
 Fixed::Fixed()
 {
-    std::cout << "Default constructor called" << std::endl;
-    this->_fixed_point = 0;
+	std::cout << "Default constructor called" << std::endl;
+	this->_fixed_point = 0;
 }
 
 // Constructor de copia.
 Fixed::Fixed(const Fixed& name)
 {
-    std::cout << "Copy constructor called" << std::endl;
-    *this = name;
+	std::cout << "Copy constructor called" << std::endl;
+	*this = name;
 }
 
 // Sobrecarga operador de asignación.
 const Fixed&	Fixed::operator =(const Fixed& name)
 {
-    std::cout << "Copy assignment operator called" << std::endl;
+	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &name) // Para evitar que se haga una reasignacion.
 		_fixed_point = name.getRawBits();  //name._fixed_point;	
+	
 	return (*this);
 }
 
@@ -45,6 +46,7 @@ Fixed::~Fixed()
 int Fixed::getRawBits(void) const
 {
 	std::cout << "getRawBits member function called" << std::endl;
+	
 	return (this->_fixed_point);
 }
 

@@ -6,7 +6,7 @@
 /*   By: javi <javi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 18:43:58 by javier            #+#    #+#             */
-/*   Updated: 2024/05/01 19:25:49 by javi             ###   ########.fr       */
+/*   Updated: 2024/05/01 20:05:38 by javi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ ClapTrap::ClapTrap():_name("Default"), _hit_points(10), _energy_points(10), _att
 
 ClapTrap::ClapTrap(std::string name):_hit_points(10), _energy_points(10), _attack_damage(0)
 {
-    this->_name = name;
-    std::cout << "Constructor called" << std::endl;
+	this->_name = name;
+	std::cout << "Constructor called" << std::endl;
 }
 
 ClapTrap::~ClapTrap()
@@ -36,8 +36,8 @@ ClapTrap::ClapTrap(ClapTrap const &copy)
 
 ClapTrap &ClapTrap::operator=(ClapTrap const& copy)
 {
-    if (this != &copy)
-    {
+	if (this != &copy)
+	{
 		_attack_damage = copy.get_attack_damage();
 		_energy_points = copy.get_energy_points();
 		_hit_points = copy.get_hit_points();
@@ -45,8 +45,8 @@ ClapTrap &ClapTrap::operator=(ClapTrap const& copy)
 	}
 	else
 		std::cout << "Both are the same" <<std::endl;
-		
-    return (*this);
+
+	return (*this);
 }
 
 void	ClapTrap::set_name(std::string name)
@@ -69,10 +69,10 @@ void	ClapTrap::set_attack_damage(unsigned int damage)
 	this->_attack_damage = damage;
 }
 
-std::string		ClapTrap::get_name(void) const
- {
+std::string	ClapTrap::get_name(void) const
+{
 	return this->_name;
- }
+}
 
 unsigned int	ClapTrap::get_hit_points(void) const
 {
@@ -100,7 +100,7 @@ void	ClapTrap::attack(const std::string& target)
 	}
 	else
 		std::cout << "Claptrap " <<  _name <<" can't attack, he has not energy points." 
-        << std::endl;
+		<< std::endl;
 }
 
 void	ClapTrap::takeDamage(unsigned int amount)

@@ -6,11 +6,10 @@
 /*   By: javi <javi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 14:07:43 by javi              #+#    #+#             */
-/*   Updated: 2024/05/01 19:36:19 by javi             ###   ########.fr       */
+/*   Updated: 2024/05/01 19:59:24 by javi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "ClapTrap.hpp"
 
 #ifndef SCAVTRAP_HPP

@@ -3,28 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: javier <javier@student.42.fr>              +#+  +:+       +#+        */
+/*   By: javi <javi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 23:52:35 by javier            #+#    #+#             */
-/*   Updated: 2024/04/30 21:36:41 by javier           ###   ########.fr       */
+/*   Updated: 2024/05/01 20:23:28 by javi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "Fixed.hpp"
 #include <cmath>
-
 
 // Constructor por defecto.
 Fixed::Fixed()
 {
-   // std::cout << "Default constructor called" << std::endl;
-    this->_fixed_point = 0;
+	// std::cout << "Default constructor called" << std::endl;
+	this->_fixed_point = 0;
 }
 
 /*
 Sobrecarga Constructor recibe int.
-
 A constructor that takes a constant integer as a parameter.
 It converts it to the corresponding fixed-point value. The fractional bits value is
 initialized to 8 like in exercise 00
@@ -44,14 +41,14 @@ Fixed::Fixed(const float floating_point)
 // Constructor de copia.
 Fixed::Fixed(const Fixed& name)
 {
-    //std::cout << "Copy constructor called" << std::endl;
-    *this = name;
+	//std::cout << "Copy constructor called" << std::endl;
+	*this = name;
 }
 
 // Sobrecarga operador de asignación.
 const Fixed&	Fixed::operator =(const Fixed& name)
 {
-    //std::cout << "Copy assignment operator called" << std::endl;
+	//std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &name) // Para evitar que se haga una reasignacion.
 		_fixed_point = name._fixed_point; //name.getRawBits();  // (Modificación para output = que en subject)
 	return (*this);
@@ -82,6 +79,7 @@ float   Fixed::toFloat(void) const
 {
 	float	res;
 	res = ((float)_fixed_point / (1 << _fractional_bits));
+	
 	return (res);
 }
 
@@ -145,6 +143,7 @@ Fixed	Fixed::operator+(const Fixed& name) const
 {
 	Fixed	res;
 	res._fixed_point = this->_fixed_point + name._fixed_point;
+
 	return res;
 }
 
@@ -152,6 +151,7 @@ Fixed	Fixed::operator-(const Fixed& name) const
 {
 	Fixed	res;
 	res._fixed_point = this->_fixed_point - name._fixed_point;
+	
 	return res;
 }
 
@@ -160,6 +160,7 @@ Fixed	Fixed::operator*(const Fixed& name) const
 	Fixed	res;
 	res._fixed_point = this->_fixed_point * name._fixed_point;
 	res._fixed_point = res._fixed_point >> this->_fractional_bits;
+	
 	return res;
 }
 
@@ -169,6 +170,7 @@ Fixed	Fixed::operator/(const Fixed& name) const
 	float	value;
 	value = (float)this->_fixed_point / (float)name._fixed_point;
 	res._fixed_point = roundf(value * (1 << this->_fractional_bits));
+
 	return res;
 }
 
@@ -178,12 +180,14 @@ Fixed	Fixed::operator++(int)
 	Fixed	buffer;
 	buffer = *this;
 	this->_fixed_point++;
+
 	return buffer;
 }
 
 Fixed	Fixed::operator++(void)
 {
 	this->_fixed_point++;
+
 	return *this;
 }
 
@@ -192,12 +196,14 @@ Fixed	Fixed::operator--(int)
 	Fixed	buffer;
 	buffer = *this;
 	this->_fixed_point--;
+	
 	return buffer;
 }
 
 Fixed	Fixed::operator--(void)
 {
 	this->_fixed_point--;
+	
 	return (*this);
 }
 
@@ -236,6 +242,7 @@ const Fixed&	Fixed::max(const Fixed& a, const Fixed& b)
 /*********************************************************************/
 std::ostream& operator<<(std::ostream& outstream, const Fixed& name)
 {
-    outstream << name.toFloat();
-    return outstream;
+	outstream << name.toFloat();
+	
+	return outstream;
 }

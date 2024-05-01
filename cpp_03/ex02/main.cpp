@@ -6,7 +6,7 @@
 /*   By: javi <javi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 13:15:37 by javi              #+#    #+#             */
-/*   Updated: 2024/05/01 19:26:08 by javi             ###   ########.fr       */
+/*   Updated: 2024/05/01 20:09:37 by javi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int main (void) {
     FragTrap Scav1("juan");
     FragTrap Scav2("Javier");
-	std::cout << Scav1.get_name() << std::endl;
+    std::cout << Scav1.get_name() << std::endl;
     std::cout << Scav1.get_name()  << " has "<< Scav1.get_energy_points() << " energy points" <<  std::endl;
     Scav1.guardGate();
     Scav1.attack("Niebla");

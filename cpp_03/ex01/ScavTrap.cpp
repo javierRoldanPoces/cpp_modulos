@@ -6,25 +6,23 @@
 /*   By: javi <javi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 17:20:35 by javi              #+#    #+#             */
-/*   Updated: 2024/05/01 19:41:30 by javi             ###   ########.fr       */
+/*   Updated: 2024/05/01 19:58:51 by javi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
- #include <iostream>
- #include "ClapTrap.hpp"
  #include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap(): ClapTrap()
 {
-    std::cout << "ScavTrap default constructor called." << std::endl;
+	std::cout << "ScavTrap default constructor called." << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name): ClapTrap(name)
 {
-    std::cout << "ScavTrap constructor called." << std::endl;
-    this->set_hit_points(100);
-    this->set_energy_points(50);
-    this->set_attack_damage(20);
+	std::cout << "ScavTrap constructor called." << std::endl;
+	this->set_hit_points(100);
+	this->set_energy_points(50);
+	this->set_attack_damage(20);
 }
 
 ScavTrap::ScavTrap(ScavTrap const& copy):ClapTrap(copy)
@@ -65,5 +63,5 @@ void ScavTrap::attack(const std::string target)
 	}
 	else
 		std::cout << "ScavTrap " <<  _name <<" can't attack, he has not energy points." 
-        << std::endl;
+		<< std::endl;
 }
