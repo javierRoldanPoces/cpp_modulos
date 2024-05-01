@@ -6,11 +6,10 @@
 /*   By: javi <javi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 18:43:58 by javier            #+#    #+#             */
-/*   Updated: 2024/05/01 19:37:11 by javi             ###   ########.fr       */
+/*   Updated: 2024/05/01 19:25:49 by javi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap():_name("Default"), _hit_points(10), _energy_points(10), _attack_damage(0)
@@ -42,8 +41,11 @@ ClapTrap &ClapTrap::operator=(ClapTrap const& copy)
 		_attack_damage = copy.get_attack_damage();
 		_energy_points = copy.get_energy_points();
 		_hit_points = copy.get_hit_points();
+		std::cout << "Operator = called." << std::endl;
 	}
-
+	else
+		std::cout << "Both are the same" <<std::endl;
+		
     return (*this);
 }
 
