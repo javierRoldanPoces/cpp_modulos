@@ -7,9 +7,12 @@ SRC =	main.cpp		\
 		WrongAnimal.cpp	\
 		WrongCat.cpp	\
 
-OBJT = $(SRC:.cpp=.o)
 
-CC = c++
+
+CC = clang++
+
+$(OBJT):	$(SRC)
+		$(CC) -c $@ $^
 
 CFLAGS = -Wall -Wextra -Werror
 
@@ -17,7 +20,7 @@ C++FLAG = -std=c++98
 
 RM = rm -f
 
-#MAKEFLAGS += --quiet
+MAKEFLAGS += --quiet
 
 all: $(NAME)
 

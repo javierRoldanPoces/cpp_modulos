@@ -8,9 +8,10 @@ SRC =	main.cpp		\
 		WrongCat.cpp	\
 		Brain.cpp		\
 
-OBJT = $(SRC:.cpp=.o)
+CC = clang++
 
-CC = c++
+$(OBJT):	$(SRC)
+		$(CC) -c $@ $^
 
 CFLAGS = -Wall -Wextra -Werror
 

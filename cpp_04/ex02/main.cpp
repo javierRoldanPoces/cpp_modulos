@@ -7,8 +7,8 @@
 
 int main()
 {
-	const AAnimal* test = new AAnimal();
-	//const AAnimal* test = new Dog();
+	//const AAnimal* test = new AAnimal();
+	const AAnimal* test = new Dog();
 	//const AAnimal* test = new Cat();
 	//std::cout << test->getType() << std::endl;
 	delete(test);
