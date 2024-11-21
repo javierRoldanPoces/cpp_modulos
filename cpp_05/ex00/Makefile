@@ -1,14 +1,10 @@
-NAME =	AAnimal
+NAME =	bureaucrat
 
 SRC =	main.cpp		\
-		AAnimal.cpp		\
-		Cat.cpp			\
-		Dog.cpp			\
-		WrongAnimal.cpp	\
-		WrongCat.cpp	\
-		Brain.cpp		\
+		Bureaucrat.cpp	\
 
-CC = clang++
+CC = c++
+# cambiar clang por c++
 
 $(OBJT):	$(SRC)
 		$(CC) -c $@ $^
