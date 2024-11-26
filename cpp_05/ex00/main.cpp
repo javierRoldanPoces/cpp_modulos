@@ -6,6 +6,7 @@ int main()
 {
     Bureaucrat Javi("Javi", 1);
     Bureaucrat  out_range("out_range", 160);
+    Bureaucrat pepe;
     std::cout << out_range;
 
     Javi.decrementGrade();
@@ -24,5 +25,6 @@ int main()
     out_range = Javi;
     std::cout << out_range;
 
+    std::cout << pepe;
     return 0;
 }
