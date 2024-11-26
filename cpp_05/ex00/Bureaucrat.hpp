@@ -34,6 +34,7 @@ class Bureaucrat
 				const char*	what()const throw();
 		};
 
+};
 //		Bureaucrat::GradeTooHighException or a Bureaucrat::GradeTooLowException.
 /*
 
@@ -42,7 +43,6 @@ You will implement an overload of the insertion («) operator to print something
 <name>, bureaucrat grade <grade>.
 
 */
-
-};
+	std::ostream& operator<<(std::ostream& st, const Bureaucrat b);
 
 #endif
