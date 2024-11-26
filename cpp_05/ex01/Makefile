@@ -1,7 +1,8 @@
-NAME =	bureaucrat
+NAME =	form
 
 SRC =	main.cpp		\
 		Bureaucrat.cpp	\
+		Form.cpp		\
 
 CC = c++
 # cambiar clang por c++

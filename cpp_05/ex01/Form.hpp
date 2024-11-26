@@ -8,7 +8,7 @@ class   Form
  {
     private:
         const	std::string _name;
-        bool	isSigned;
+        bool	_isSigned;
         const	int _gradeSign;
 		const	int _gradeExecute;
     
@@ -21,19 +21,19 @@ class   Form
 		~Form();
 
 		//getter
-		const 	std::string name getName() const;
-		bool	get_isSigned() const;
-		int		get_gradeSign() const;
-		int		get_gradeExecute() const;
+		const 	std::string getName()const;
+		bool	get_isSigned()const;
+		int		get_gradeSign()const;
+		int		get_gradeExecute()const;
 
-		beSigned(const Bureaucrat &b); //Remember, grade 1 is higher than grade 2.
+		bool beSigned(const Bureaucrat& b); //Remember, grade 1 is higher than grade 2.
 										//If the grade is too low, throw a Form::GradeTooLowException.
 		/*
 		The grades of the Form follow the same rules that apply to the Bureaucrat. Thus,
 		the following exceptions will be thrown if a form grade is out of bounds:
 		Form::GradeTooHighException and Form::GradeTooLowException.
 		*/
-		class	GradeTooHighException: pubic std::exception
+		class	GradeTooHighException: public std::exception
 		{
 			public:
 				const char *what()const throw();
@@ -55,7 +55,7 @@ class   Form
  /*
  OJO FALTA
 
- Lastly, add a signForm() member function to the Bureaucrat. If the form got signed,
+Lastly, add a signForm() member function to the Bureaucrat. If the form got signed,
 it will print something like:
 <bureaucrat> signed <form>
 Otherwise, it will print something like:
