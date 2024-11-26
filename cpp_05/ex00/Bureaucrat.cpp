@@ -6,13 +6,13 @@ Bureaucrat::Bureaucrat():_name("default"), _grade(150)
 }
 
 Bureaucrat::Bureaucrat(const std::string &name, int grade)
-:_name(name)//, _grade(grade)
+:_name(name), _grade(grade)
 {
     try
     {
         if (grade < 1)
 		{
-            _grade = 1;
+          	_grade = 1;
 			throw Bureaucrat::GradeTooHighException();
 
 		}
@@ -62,7 +62,8 @@ void Bureaucrat::incrementGrade()
 	{
 		if (this->_grade <= 1)
 			throw Bureaucrat::GradeTooHighException();
-		this->_grade--;
+		else
+			this->_grade--;
 	}
 	catch(const std::exception& e)
 	{
@@ -76,7 +77,8 @@ void Bureaucrat::decrementGrade()
 	{
 		if (this->_grade >= 150)
 			throw Bureaucrat::GradeTooLowException();
-		this->_grade++;
+		else
+			this->_grade++;
 	}
 	catch(const std::exception& e)
 	{
