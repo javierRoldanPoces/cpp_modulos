@@ -22,6 +22,8 @@ class Bureaucrat
 		void	incrementGrade();
 		void	decrementGrade();
 
+		void	signForm(Form& form);
+
 		class	GradeTooHighException: public std::exception
 		{
 			public:
@@ -33,16 +35,11 @@ class Bureaucrat
 			public:
 				const char*	what()const throw();
 		};
+// Tendriamos que crear dos excepciones uno si el grado no es suficiente para firmar y otra si el form ya esta firmado
+		class	
 
 };
-//		Bureaucrat::GradeTooHighException or a Bureaucrat::GradeTooLowException.
-/*
 
-You will implement an overload of the insertion («) operator to print something like
-(without the angle brackets):
-<name>, bureaucrat grade <grade>.
-
-*/
 	std::ostream& operator<<(std::ostream& st, const Bureaucrat b);
 
 #endif

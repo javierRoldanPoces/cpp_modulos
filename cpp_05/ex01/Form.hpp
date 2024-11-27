@@ -20,19 +20,13 @@ class   Form
 
 		~Form();
 
-		//getter
 		const 	std::string getName()const;
 		bool	get_isSigned()const;
 		int		get_gradeSign()const;
 		int		get_gradeExecute()const;
 
-		bool beSigned(const Bureaucrat& b); //Remember, grade 1 is higher than grade 2.
-										//If the grade is too low, throw a Form::GradeTooLowException.
-		/*
-		The grades of the Form follow the same rules that apply to the Bureaucrat. Thus,
-		the following exceptions will be thrown if a form grade is out of bounds:
-		Form::GradeTooHighException and Form::GradeTooLowException.
-		*/
+		bool beSigned(const Bureaucrat& b); 
+
 		class	GradeTooHighException: public std::exception
 		{
 			public:

@@ -1,4 +1,5 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat():_name("default"), _grade(150)
 {
@@ -37,7 +38,8 @@ Bureaucrat::Bureaucrat(const Bureaucrat &copy)
 
 Bureaucrat&	Bureaucrat::operator=(const Bureaucrat &copy)
 {
-	_grade = copy._grade;
+	if (this != &copy)	
+		_grade = copy._grade; //Tb podriamos usar el método get_grade
 	return *this;
 }
 
@@ -95,9 +97,14 @@ const char *Bureaucrat::GradeTooLowException::what() const throw()
 {
 	return "error: Grade too low: ";
 }
+void	Bureaucrat::signForm(Form& form)
+{
+
+}
 
 std::ostream& operator<<(std::ostream& st, const Bureaucrat b)
 {
 	st <<b.getName()  << ", bureaucrat grade " << b.getGrade() << std::endl;
 	return st;
 }
+

@@ -43,3 +43,67 @@ const char *Form::GradeTooLowException::what() const throw()
 {
     return "error: Form grade too low: ";
 }
+
+Form::Form(const Form &copy)
+:_name(copy._name), _isSigned(copy._isSigned), _gradeSign(copy._gradeSign), _gradeExecute(copy._gradeExecute)
+{
+
+}
+
+Form& Form::operator=(const Form &copy)
+{
+    if (this != &copy)
+        this->_isSigned = copy._isSigned; // Solo habria q igualar este atributo pq los demas son cons
+    return *this;
+}
+
+Form::~Form()
+{
+
+}
+
+const 	std::string Form::getName()const
+{
+    return this->_name;
+}
+
+bool	Form::get_isSigned()const
+ {
+    return this->_isSigned;
+ }
+
+int		Form::get_gradeSign()const
+{
+    return this->_gradeSign;
+}
+
+int     Form::get_gradeExecute()const
+{
+    return this->_gradeExecute;
+}
+
+bool Form::beSigned(const Bureaucrat& b)
+{
+    try
+    {
+		if (b.getGrade() > this->get_gradeSign())
+			throw Form::GradeTooLowException();
+		this->_isSigned = true;
+		return true;	
+	}
+    catch(const std::exception& e)
+	{
+		std::cerr << e.what() << b.getGrade() << std::endl;
+		return false;
+	}
+}
+
+ std::ostream& operator<<(std::ostream& st, const Form& form)
+ {
+	st << "\nForm Name: " << form.getName() << std::endl
+	<< "\nForm isSigned: " << form.get_isSigned() << std::endl
+	<< "\nForm gradeSign: " << form.get_gradeSign() << std::endl
+	<< "\nForm graExecute " << form.get_gradeExecute() <<std::endl; 
+    return st;
+ }
+
