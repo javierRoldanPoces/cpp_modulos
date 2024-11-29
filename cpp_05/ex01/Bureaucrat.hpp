@@ -2,6 +2,9 @@
 #define BUREAUCRAT_HPP
 #include <iostream>
 #include <exception>
+#include "Form.hpp"
+
+class Form;
 
 class Bureaucrat
 {
@@ -16,13 +19,13 @@ class Bureaucrat
 		Bureaucrat&	operator=(const Bureaucrat &copy); //Sobrecarga constructor de asignacion
 
 		~Bureaucrat();//Destructor
-		//getter setter
+		//getter
 		const std::string	getName()const;
-		int	getGrade()const;
-		void	incrementGrade();
-		void	decrementGrade();
+		int					getGrade()const;
+		void				incrementGrade();
+		void				decrementGrade();
 
-		void	signForm(Form& form);
+		void	signForm(Form& form);//Nuevo metodo ex01
 
 		class	GradeTooHighException: public std::exception
 		{
@@ -35,9 +38,18 @@ class Bureaucrat
 			public:
 				const char*	what()const throw();
 		};
-// Tendriamos que crear dos excepciones uno si el grado no es suficiente para firmar y otra si el form ya esta firmado
-		class	
+// Tendriamos que crear dos excepciones uno si el grado del burocrata no es suficiente para firmar y otra si el form ya esta firmado
+		class	FormSignedException: public std::exception
+		{
+			public:
+				const char* what()const throw();
+		};
 
+		class	AlreadySignedFormException: public std::exception
+		{
+			public:
+				const char* what()const throw();
+		};
 };
 
 	std::ostream& operator<<(std::ostream& st, const Bureaucrat b);

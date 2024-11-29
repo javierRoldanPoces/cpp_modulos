@@ -4,6 +4,8 @@
 #include <iostream>
 #include <exception>
 
+class	Bureaucrat;
+
 class   Form
  {
     private:
@@ -14,7 +16,7 @@ class   Form
     
 	public:
 		Form();
-		Form(const std::string &name, bool isSigned, int gSign, int gExec);
+		Form(const std::string &name, int gSign, int gExec);
 		Form(const Form &copy);
 		Form& operator=(const Form &copy);
 
@@ -24,6 +26,7 @@ class   Form
 		bool	get_isSigned()const;
 		int		get_gradeSign()const;
 		int		get_gradeExecute()const;
+		void	check_grade(const int grade);
 
 		bool beSigned(const Bureaucrat& b); 
 

@@ -1,5 +1,4 @@
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
 
 Bureaucrat::Bureaucrat():_name("default"), _grade(150)
 {
@@ -20,7 +19,7 @@ Bureaucrat::Bureaucrat(const std::string &name, int grade)
         else if (grade > 150)
 		{
 			_grade = 150;
-            throw Bureaucrat::GradeTooHighException();
+            throw Bureaucrat::GradeTooLowException();
 		}
     }
     catch(const std::exception& e)
@@ -97,8 +96,41 @@ const char *Bureaucrat::GradeTooLowException::what() const throw()
 {
 	return "error: Grade too low: ";
 }
+
+const char *Bureaucrat::FormSignedException::what() const throw()
+{
+	return "Not enough grade for signing";
+}
+
+const char *Bureaucrat::AlreadySignedFormException::what() const throw()
+{
+	return "Form already signed";
+}
+
+
+
+//Controlar que el burocrata tenga grado suficiente para firmar el form.
+//Controlar que el formulario no este firmado ya.
 void	Bureaucrat::signForm(Form& form)
 {
+	try
+	{
+		if (form.get_isSigned())
+			throw Bureaucrat::AlreadySignedFormException();
+		if (form.beSigned(*this) == true)
+			std::cout << this->getName() << " signed " << form.getName() << std::endl;
+		else
+			throw Bureaucrat::FormSignedException();
+	}
+	catch(const Bureaucrat::FormSignedException &exception)
+	{
+		std::cerr << "Error: " << form.getName() << ", because " << this->getName() << " has " << exception.what() << std::endl;
+	}
+	catch(const Bureaucrat::AlreadySignedFormException &exception)
+	{
+		std::cerr << "Error: " << this->getName() << ", cannot sign " << form.getName() << ", because " << exception.what() << std::endl;
+
+	}
 
 }
 
