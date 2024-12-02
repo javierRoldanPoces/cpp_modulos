@@ -5,26 +5,32 @@
 int main()
 {
     Bureaucrat Javi("Javi", 1);
-    Bureaucrat  out_range("out_range", 160);
+     std::cout << Javi << std::endl;
+    Bureaucrat  out_range("out_range", 160);//excepcion
+     std::cout << out_range << std::endl;
     Bureaucrat pepe;
-    std::cout << out_range;
+    std::cout << pepe << std::endl;
 
     Javi.decrementGrade();
+    std::cout << Javi << std::endl;
     Javi.decrementGrade();
+    std::cout << Javi << std::endl;
     Javi.decrementGrade();
+    std::cout << Javi << std::endl;
 
-    std::cout << Javi;
 
     for (int i=0; i < 10; i++)
-        Javi.incrementGrade();
+    {
+		Javi.incrementGrade();
+        std::cout << Javi << std::endl;
+    }   
     
-
-    std::cout << Javi;
-    std::cout << out_range;
+    std::cout << Javi << std::endl;  
+    std::cout <<"Igualamos out:range = javi"  << std::endl;
 
     out_range = Javi;
-    std::cout << out_range;
-
-    std::cout << pepe;
+     std::cout << out_range << std::endl;
+   
+	//std::cout << pepe;
     return 0;
 }

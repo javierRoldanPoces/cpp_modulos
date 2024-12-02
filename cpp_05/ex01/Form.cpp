@@ -134,24 +134,6 @@ bool Form::beSigned(const Bureaucrat& b)
     }
     else
         return false;
-   
-   
-    // try
-    // {
-	// 	if (b.getGrade() > this->get_gradeSign())
-	// 		throw Form::GradeTooLowException();
-	// 	else
-    //     {
-    //         this->_isSigned = true;
-	// 	    return true;	
-    //     }
-
-	// }
-    // catch(const std::exception& e)
-	// {
-	// 	std::cerr << e.what() << b.getGrade() << "prueb" << std::endl; 
-	// 	return false;
-	// }
 }
 
  std::ostream& operator<<(std::ostream& st, const Form& form)

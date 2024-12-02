@@ -19,7 +19,7 @@ Bureaucrat::Bureaucrat(const std::string &name, int grade)
         else if (grade > 150)
 		{
 			_grade = 150;
-            throw Bureaucrat::GradeTooHighException();
+            throw Bureaucrat::GradeTooLowException();
 		}
     }
     catch(const std::exception& e)
@@ -37,7 +37,8 @@ Bureaucrat::Bureaucrat(const Bureaucrat &copy)
 
 Bureaucrat&	Bureaucrat::operator=(const Bureaucrat &copy)
 {
-	_grade = copy._grade;
+	if (this != &copy)	
+		_grade = copy._grade; //Tb podriamos usar el método get_grade
 	return *this;
 }
 
@@ -88,7 +89,7 @@ void Bureaucrat::decrementGrade()
 
 const char *Bureaucrat::GradeTooHighException::what() const throw()
 {
-	return "error: Grade too high ";
+	return "error: Grade too high proba ";
 }
 
 const char *Bureaucrat::GradeTooLowException::what() const throw()

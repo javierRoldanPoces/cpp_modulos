@@ -39,11 +39,15 @@ int main()
     
     //Firmas
 
-	// b1.signForm(F1);
-	// b2.signForm(F1); //No puede firmar excepcion pq ya esta firmado
+	b1.signForm(F1);
+	b2.signForm(F1); //No puede firmar excepcion pq ya esta firmado
 	b2.signForm(F4);
 	b3.signForm(F3);
 	//ya esta frimado y ademas no tiene grados suficiente paera firmarlo
 	b2.signForm(F1);
+    std::cout << std::endl;
+   
+   //Impresion formulario ya firmado 
+    std::cout << F1 << std::endl;
 
 }

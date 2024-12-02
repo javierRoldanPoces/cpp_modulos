@@ -107,10 +107,12 @@ const char *Bureaucrat::AlreadySignedFormException::what() const throw()
 	return "Form already signed";
 }
 
+std::ostream& operator<<(std::ostream& st, const Bureaucrat b)
+{
+	st <<b.getName()  << ", bureaucrat grade " << b.getGrade() << std::endl;
+	return st;
+}
 
-
-//Controlar que el burocrata tenga grado suficiente para firmar el form.
-//Controlar que el formulario no este firmado ya.
 void	Bureaucrat::signForm(Form& form)
 {
 	try
@@ -134,9 +136,5 @@ void	Bureaucrat::signForm(Form& form)
 
 }
 
-std::ostream& operator<<(std::ostream& st, const Bureaucrat b)
-{
-	st <<b.getName()  << ", bureaucrat grade " << b.getGrade() << std::endl;
-	return st;
-}
+
 

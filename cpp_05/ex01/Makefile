@@ -5,7 +5,6 @@ SRC =	main.cpp		\
 		Form.cpp		\
 
 CC = c++
-# cambiar clang por c++
 
 $(OBJT):	$(SRC)
 		$(CC) -c $@ $^

@@ -4,7 +4,6 @@ SRC =	main.cpp		\
 		Bureaucrat.cpp	\
 
 CC = c++
-# cambiar clang por c++
 
 $(OBJT):	$(SRC)
 		$(CC) -c $@ $^
