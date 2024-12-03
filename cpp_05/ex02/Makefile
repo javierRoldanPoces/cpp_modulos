@@ -2,7 +2,10 @@ NAME =	form
 
 SRC =	main.cpp		\
 		Bureaucrat.cpp	\
-		Form.cpp		\
+		AForm.cpp		\
+		ShrubberyCreationForm.cpp	\
+		PresidentialPardonForm.cpp	\
+		RobotomyRequestForm.cpp		\
 
 CC = c++
 

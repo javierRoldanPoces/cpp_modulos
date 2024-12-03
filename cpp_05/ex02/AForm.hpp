@@ -29,7 +29,7 @@ class   AForm
 		bool		get_isSigned()const;
 		int			get_gradeSign()const;
 		int			get_gradeExecute()const;
-		std::string	get_target()const;
+		std::string	get_target()const; // desarrollar
 		void	check_grade(const int grade);
 
 		bool beSigned(const Bureaucrat& b); 
